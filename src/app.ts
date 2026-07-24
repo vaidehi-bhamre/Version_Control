@@ -1,6 +1,8 @@
 import cors from "cors";
 import express from "express";
 
+import apiRouter from "./routes";
+
 const app = express();
 
 app.use(cors());
@@ -11,5 +13,7 @@ app.get("/api/health", (_req, res) => {
     message: "Server is running",
   });
 });
+
+app.use("/api", apiRouter);
 
 export default app;
