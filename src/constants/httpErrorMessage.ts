@@ -14,5 +14,6 @@ export const HTTP_ERROR_MESSAGE = {
 
   INVALID_START_DATE: "Invalid startDate",
   INVALID_END_DATE: "Invalid endDate",
+  ROUTE_NOT_FOUND: "Route not found",
   INVALID_DATE_RANGE: "startDate cannot be greater than endDate",
 } as const;
