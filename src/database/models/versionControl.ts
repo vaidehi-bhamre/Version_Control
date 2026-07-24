@@ -1,5 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
-import { VERSION_TYPES, VersionType } from "../../constants/version.constant";
+import { VERSION_TYPES } from "../../constants/version.constant";
+import type { VersionType } from "../../constants/version.constant";
 import sequelize from "../config/sequelize";
 
 export interface VersionControlAttributes {
