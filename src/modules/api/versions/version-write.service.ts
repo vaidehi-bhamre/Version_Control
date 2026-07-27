@@ -90,16 +90,21 @@ import {
         input.projectId,
         input.version
       );
-  
+
+    const now = new Date();
     const createdVersion =
+   
       await VersionControl.create({
         projectId: input.projectId,
         version: input.version,
-        versionNumber,
+        versionNumber: versionNumber,
         versionTitle: input.versionTitle,
         versionInfo: input.versionInfo,
         isActive: true,
         createdBy: DEVELOPMENT_USER_ID,
+        createdAt: now,
+        updatedBy: DEVELOPMENT_USER_ID,
+        updatedAt: now,
       });
   
     return createdVersion;
@@ -136,7 +141,11 @@ import {
         input.versionInfo;
     }
   
-    await existingVersion.update(updateData);
+    await existingVersion.update({
+        versionTitle: input.versionTitle,
+        versionInfo: input.versionInfo,
+        updatedBy: DEVELOPMENT_USER_ID,
+      });
   
     return existingVersion;
   };
