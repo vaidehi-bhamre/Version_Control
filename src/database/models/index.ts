@@ -1,15 +1,31 @@
+import { ProjectMaster } from "./projectMaster";
+import { VersionControl } from "./versionControl";
 import sequelize from "../config/sequelize";
-import ProjectMaster from "./projectMaster";
-import VersionControl from "./versionControl";
 
 ProjectMaster.hasMany(VersionControl, {
-  foreignKey: "project_id",
+  foreignKey: "projectId",
   as: "versions",
 });
 
 VersionControl.belongsTo(ProjectMaster, {
-  foreignKey: "project_id",
+  foreignKey: "projectId",
   as: "project",
 });
 
-export { sequelize, ProjectMaster, VersionControl };
+export {
+  ProjectMaster,
+  VersionControl,
+  sequelize
+};
+
+export type {
+  ProjectMasterAttributes,
+  ProjectMasterCreationAttributes,
+} from "./projectMaster";
+
+export type {
+  VersionControlAttributes,
+  VersionControlCreationAttributes,
+  VersionInfo,
+  VersionType,
+} from "./versionControl";

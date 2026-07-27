@@ -1,0 +1,1 @@
+export const DEVELOPMENT_USER_ID = 1;
