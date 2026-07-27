@@ -1,0 +1,55 @@
+{
+  "info": {
+    "_postman_id": "1b3af93c-38c9-4531-9a57-985c6e6e893f",
+    "name": "Version Control APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56873345",
+    "_collection_link": "https://go.postman.co/collection/56873345-1b3af93c-38c9-4531-9a57-985c6e6e893f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PATCH request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
