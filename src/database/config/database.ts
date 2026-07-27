@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { Dialect } from "sequelize";
 
-dotenv.config();
+dotenv.config({ override: true });
 
 interface DatabaseConfig {
   database: string;
@@ -12,6 +12,10 @@ interface DatabaseConfig {
   dialect: Dialect;
   logging: boolean;
 }
+
+console.log("DB_USER:", process.env.DB_USER);
+console.log("DB_PASSWORD exists:", !!process.env.DB_PASSWORD);
+console.log("DB_PASSWORD length:", process.env.DB_PASSWORD?.length);
 
 const databaseConfig: DatabaseConfig = {
   database: process.env.DB_NAME || "version_control_db",
