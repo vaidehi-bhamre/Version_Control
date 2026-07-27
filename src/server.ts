@@ -1,26 +1,24 @@
 import dotenv from "dotenv";
 import app from "./app";
-import { sequelize } from "./database/config/sequelize";
-
-import "./database/models";
+import { sequelize } from "./database/models";
 
 dotenv.config();
 
-const PORT = Number(process.env.PORT) || 5003;
+const PORT = process.env.PORT || 5000;
 
-const startServer = async (): Promise<void> => {
+const startServer = async () => {
   try {
     await sequelize.authenticate();
 
-    console.log("MySQL connection established successfully.");
+    console.log("Database connected successfully");
 
     app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
+      console.log(`Server is running on port ${PORT}`);
     });
   } catch (error) {
-    console.error("Failed to connect to MySQL:", error);
+    console.error("Unable to start server:", error);
     process.exit(1);
   }
 };
 
-void startServer();
+startServer();

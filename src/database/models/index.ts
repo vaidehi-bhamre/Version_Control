@@ -1,5 +1,6 @@
 import { ProjectMaster } from "./projectMaster";
 import { VersionControl } from "./versionControl";
+import sequelize from "../config/sequelize";
 
 ProjectMaster.hasMany(VersionControl, {
   foreignKey: "projectId",
@@ -14,6 +15,7 @@ VersionControl.belongsTo(ProjectMaster, {
 export {
   ProjectMaster,
   VersionControl,
+  sequelize
 };
 
 export type {

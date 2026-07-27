@@ -1,9 +1,13 @@
-import { Router } from "express";
+import {Router} from "express";
 
-import versionRouter from "../modules/api/versions/version.router";
+
+import projectRouter from "../modules/projects/project.router";
+import versionRouter from "../modules/versions/version.router";
 
 const router = Router();
 
+router.use("/projects", projectRouter);
 router.use("/versions", versionRouter);
+
 
 export default router;

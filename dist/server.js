@@ -5,22 +5,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 const app_1 = __importDefault(require("./app"));
-const sequelize_1 = require("./database/config/sequelize");
-require("./database/models");
+const models_1 = require("./database/models");
 dotenv_1.default.config();
-const PORT = Number(process.env.PORT) || 5003;
+const PORT = process.env.PORT || 5000;
 const startServer = async () => {
     try {
-        await sequelize_1.sequelize.authenticate();
-        console.log("MySQL connection established successfully.");
+        await models_1.sequelize.authenticate();
+        console.log("Database connected successfully");
         app_1.default.listen(PORT, () => {
-            console.log(`Server running on http://localhost:${PORT}`);
+            console.log(`Server is running on port ${PORT}`);
         });
     }
     catch (error) {
-        console.error("Failed to connect to MySQL:", error);
+        console.error("Unable to start server:", error);
         process.exit(1);
     }
 };
-void startServer();
+startServer();
 //# sourceMappingURL=server.js.map

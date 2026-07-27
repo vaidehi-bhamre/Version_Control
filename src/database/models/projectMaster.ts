@@ -4,7 +4,7 @@ import {
     Optional,
   } from "sequelize";
   
-  import { sequelize } from "../config/sequelize";
+  import sequelize  from "../config/sequelize";
   
   export interface ProjectMasterAttributes {
     id: number;
