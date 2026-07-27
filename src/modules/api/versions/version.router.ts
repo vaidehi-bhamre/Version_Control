@@ -7,7 +7,7 @@ import {
   updateVersionController,
 } from "./version-write.controller";
 
-const versionRouter = Router();
+const version_Router = Router();
 
 /**
  * GET /api/versions/next-number
@@ -15,7 +15,7 @@ const versionRouter = Router();
  * Example:
  * /api/versions/next-number?projectId=1&version=minor
  */
-versionRouter.get(
+version_Router.get(
   "/next-number",
   getNextVersionNumberController
 );
@@ -23,7 +23,7 @@ versionRouter.get(
 /**
  * POST /api/versions
  */
-versionRouter.post(
+version_Router.post(
   "/",
   createVersionController
 );
@@ -31,7 +31,7 @@ versionRouter.post(
 /**
  * PUT /api/versions/:id
  */
-versionRouter.put(
+version_Router.put(
   "/:id",
   updateVersionController
 );
@@ -39,9 +39,9 @@ versionRouter.put(
 /**
  * PATCH /api/versions/:id/toggle-status
  */
-versionRouter.patch(
+version_Router.patch(
   "/:id/toggle-status",
   toggleVersionStatusController
 );
 
-export default versionRouter;
+export default version_Router;
