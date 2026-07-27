@@ -8,8 +8,9 @@ import version_Router from "../modules/api/versions/version.router"
 const router = Router();
 
 router.use("/projects", projectRouter);
-router.use("/versions", versionRouter);
 router.use("/versions", version_Router);
+router.use("/versions", versionRouter);
+
 
 
 export default router;
