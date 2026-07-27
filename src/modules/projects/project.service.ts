@@ -4,7 +4,7 @@ export const getActiveProjectsService = async () => {
   const projects = await ProjectMaster.findAll({
     attributes: ["id", "project_name"],
     where: {
-      is_active: true,
+      isActive: true,
     },
     order: [["project_name", "ASC"]],
   });
